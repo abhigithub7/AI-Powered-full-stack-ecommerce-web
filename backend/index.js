@@ -16,7 +16,11 @@ app.use(cookieParser());
  app.use(express.urlencoded({extended:true,limit:"16kb"}))
  app.use(express.static("public"))
 
-app.use(cors())
+app.use(cors({
+    origin:["https://zingy-blini-9efab0.netlify.app/","https://lambent-truffle-05e149.netlify.app/"],
+    credentials:true,
+
+}))
 const PORT =  process.env.PORT || 2003  
 
 app.get("/",(req,res)=>{

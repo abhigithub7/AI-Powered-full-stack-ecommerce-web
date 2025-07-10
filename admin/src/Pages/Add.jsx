@@ -44,7 +44,7 @@ function Add() {
       if (image4) formData.append("image4", image4);
 
       const result = await axios.post(
-        `${serverUrl}/api/product/addproduct`,
+        `${serverUrl}api/product/addproduct`,
         formData,
         { withCredentials: true }
       );

@@ -21,7 +21,7 @@ function Login() {
      const AdminLogin = async (e) =>{
         e.preventDefault()
         try {
-            const result = await axios.post(serverUrl+'/api/auth/adminlogin',{email,password},{withCredentials:true})
+            const result = await axios.post(serverUrl+'api/auth/adminlogin',{email,password},{withCredentials:true})
             console.log(result.data);
             toast.success("Admin Login Successfully")
             getAdmin();

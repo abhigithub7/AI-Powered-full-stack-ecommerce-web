@@ -28,7 +28,7 @@ function List() {
   const removeList = async (id) =>{
 
     try {
-      const result = await axios.post(`${serverUrl}/api/product/remove/${id}`,{},{withCredentials:true})
+      const result = await axios.post(`${serverUrl}api/product/remove/${id}`,{},{withCredentials:true})
       if(result.data)
       {
         fetchList();
