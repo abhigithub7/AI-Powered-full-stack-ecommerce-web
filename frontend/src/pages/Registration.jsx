@@ -26,7 +26,7 @@ function Registration() {
 
     try {
 
-      const result = await axios.post('http://localhost:2199/api/auth/register', {
+      const result = await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/register', {
         username,
         email,
         password

@@ -13,7 +13,8 @@ function UserContext({children}) {
 
  const getCurrentUser = async () =>{
         try {
-            let result =  await axios.get('http://localhost:2199/api/user/getcurrentuser',{withCredentials:true}
+            let result =  await axios.get('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/user/getcurrentuser',
+              {withCredentials:true}
                  )
                  if(result && result.data)
                  {

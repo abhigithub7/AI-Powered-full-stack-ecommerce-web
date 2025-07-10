@@ -17,7 +17,7 @@ app.use(cookieParser());
  app.use(express.static("public"))
 
 app.use(cors({
-    origin:["http://localhost:5173","http://localhost:5174"],
+    origin:["https://zingy-blini-9efab0.netlify.app/","https://lambent-truffle-05e149.netlify.app/"],
     credentials:true,
 
 }))
