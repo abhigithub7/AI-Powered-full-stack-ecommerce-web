@@ -3,13 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoEyeSharp } from "react-icons/io5";
 import axios from 'axios'
-import { authDATAContext } from '../Context/AuthContext';
 import { adminDATAContext } from '../Context/AdminContext';
 import { toast } from 'react-toastify';
 function Login() {
 
      const {getAdmin} = useContext(adminDATAContext)
-    const {serverUrl} = useContext(authDATAContext)
       const navigate = useNavigate();
     
     const [email, setEmail] = useState("");
@@ -21,7 +19,7 @@ function Login() {
      const AdminLogin = async (e) =>{
         e.preventDefault()
         try {
-            const result = await axios.post(serverUrl+'api/auth/adminlogin',{email,password},{withCredentials:true})
+            const result = await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/adminlogin',{email,password},{withCredentials:true})
             console.log(result.data);
             toast.success("Admin Login Successfully")
             getAdmin();
