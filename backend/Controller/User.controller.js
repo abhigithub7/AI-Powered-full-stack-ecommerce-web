@@ -1,4 +1,5 @@
 import { User } from "../Models/User.Model.js"
+import { genToken } from "../config/token.js";
 
 
 const getCurrentUser = async (req,res) =>{
