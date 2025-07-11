@@ -122,6 +122,9 @@ const Login = async (req, res) => {
 
 const LogOut = async (req,res)=>{
   try {
+    const user = await  User.findOne({email});
+
+    let token = await genToken(user._id);
     
     res.clearCookie("token")
     return res.status(200).json({message:"Logout succesfully"});

@@ -15,7 +15,7 @@ function Order() {
   const loadOrderData = async ()=>{
     try {
   
-    const result = await axios.post(serverUrl+'/order/userorder',{},{withCredentials:true})
+    const result = await axios.post(serverUrl+'order/userorder',{},{withCredentials:true})
      
     if(result.data)
     {

@@ -8,7 +8,7 @@ import CartTotal from '../Components/CartTotal'
 function Cart() {
   const { products, currency, cartItem, updateQuantity } = useContext(shopDataContext)
   const [cartData, setCartData] = useState([])
-  const Navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const tempData = []
@@ -90,7 +90,7 @@ function Cart() {
             className="text-[18px] hover:bg-slate-600 bg-[#495b61c9] border border-[#80808049] py-3 px-10 rounded-2xl text-white shadow-md mt-6 mx-auto block"
             onClick={() => {
               if (cartData.length > 0) {
-                Navigate('/placeorder')
+                navigate('/placeorder')
               } else {
                 console.log('Cart is empty')
               }

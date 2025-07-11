@@ -12,14 +12,13 @@ function Login() {
   const navigate = useNavigate();
 
   const [show, setShow] = useState();
-   const {serverUrl} = useContext(AuthDataContext);
 
    const {getCurrentUser}= useContext(userDataContext)
 
    const handlLogin = async (e) =>{
       e.preventDefault();
       try {
-         const result = await axios.post(`${serverUrl}/auth/login`, {
+         const result = await axios.post(`https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/login`, {
             email,
             password
          },{withCredentials:true})
@@ -44,7 +43,7 @@ function Login() {
        let email = user.email;
        
    
-       const result = await axios.post(serverUrl+'/auth/googlelogin',{
+       const result = await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/googlelogin',{
          username,email
        },{withCredentials:true})
        toast

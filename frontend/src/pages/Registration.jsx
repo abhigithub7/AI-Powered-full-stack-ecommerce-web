@@ -13,7 +13,6 @@ function Registration() {
   const {getCurrentUser} = useContext(userDataContext)
   const navigate = useNavigate();
   const [show, setShow] = useState();
- const {serverUrl} = useContext(AuthDataContext);
 
  const [username, setUsername] = useState("")
  const [email, setEmail] = useState("")
@@ -52,7 +51,7 @@ const googleSignup = async () => {
     const { user } = await signInWithPopup(auth, provider);
     const { displayName: username, email } = user;
 
-    const result = await axios.post(serverUrl+'/auth/googlelogin',
+    const result = await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/googlelogin',
       { username, email },
       { withCredentials: true }
     );

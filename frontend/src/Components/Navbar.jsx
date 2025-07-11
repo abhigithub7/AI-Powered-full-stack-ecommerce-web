@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { IoSearchCircleOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
@@ -23,10 +24,12 @@ function Navbar() {
 
    const handlLogout = async () =>{
     try {
-      const result = await axios.get('http://localhost:2199/api/auth/logout', {withCredentials:true})
+      const result = await axios.get('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/logout', {withCredentials:true})
       toast.success("Logout Succesfully")
+     
       console.log(result.data)
-      getCurrentUser();
+      navigate('/login')
+       
     } catch (error) {
       console.error("logout error ",error)
       
