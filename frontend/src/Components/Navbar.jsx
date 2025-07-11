@@ -26,7 +26,7 @@ function Navbar() {
     try {
       const result = await axios.get('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/logout', {withCredentials:true})
       toast.success("Logout Succesfully")
-     
+      getCurrentUser()
       console.log(result.data)
       navigate('/login')
        
