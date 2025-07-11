@@ -17,10 +17,19 @@ app.use(cookieParser());
  app.use(express.static("public"))
 
 app.use(cors({
-    origin:["https://zingy-blini-9efab0.netlify.app","https://lambent-truffle-05e149.netlify.app"],
-    credentials:true,
-
-}))
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "https://zingy-blini-9efab0.netlify.app",
+      "https://lambent-truffle-05e149.netlify.app"
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
 const PORT =  process.env.PORT || 2003  
 
 app.get("/",(req,res)=>{

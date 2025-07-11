@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react'
 import Title from '../Components/Title'
 import { shopDataContext } from '../context/ShopContext'

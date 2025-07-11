@@ -53,14 +53,18 @@ const googleSignup = async () => {
 
     const result = await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/googlelogin',
       { username, email },
-      { withCredentials: true }
+      { withCredentials: true },
+      {mode:'cors'}
     );
 
+
     console.log(result.data);
+    toast.success("User Signup Suceesfully")
      getCurrentUser();
          navigate("/");
   } catch (error) {
     console.error("Google signup error:", error);
+    toast.error("Signup failed")
   }
 };
 

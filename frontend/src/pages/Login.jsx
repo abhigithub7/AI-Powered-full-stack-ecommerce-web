@@ -45,8 +45,12 @@ function Login() {
    
        const result = await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/auth/googlelogin',{
          username,email
-       },{withCredentials:true})
-       toast
+       },{withCredentials:true},
+        {mode:'cors'}
+      
+      )
+
+      
        console.log(result.data)
        toast.success("Login Succesfully")
         getCurrentUser();
