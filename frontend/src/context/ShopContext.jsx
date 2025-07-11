@@ -15,7 +15,6 @@ function ShopContext({ children }) {
   const [showSearch, setShowSearch] = useState(false);
   const [cartItem, setCartItem] = useState({});
 
-  const { serverUrl } = useContext(AuthDataContext);
   const { userData } = useContext(userDataContext);
 
   const currency = '₹';
@@ -24,7 +23,7 @@ function ShopContext({ children }) {
   // Fetch all products
   const getProducts = async () => {
     try {
-      const response = await axios.get(`${serverUrl}product/list`);
+      const response = await axios.get(`https://ai-powered-full-stack-ecommerce-web.onrender.com/api/product/list`);
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -50,7 +49,7 @@ function ShopContext({ children }) {
     if (userData) {
       try {
         const response = await axios.post(
-          `${serverUrl}/cart/add`,
+          `https://ai-powered-full-stack-ecommerce-web.onrender.com/api/cart/add`,
           { itemId, size },
           { withCredentials: true }
         );
@@ -66,7 +65,7 @@ function ShopContext({ children }) {
     if (!userData) return;
     try {
       const response = await axios.post(
-        `${serverUrl}/cart/get`,
+        `https://ai-powered-full-stack-ecommerce-web.onrender.com/api/cart/get`,
         {},
         { withCredentials: true }
       );
@@ -84,7 +83,7 @@ function ShopContext({ children }) {
     if(userData)
     {
         try {
-          await axios.post(serverUrl+'/cart/update',{itemId, size ,quantity},{withCredentials:true})
+          await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/cart/update',{itemId, size ,quantity},{withCredentials:true})
       
     } catch (error) {
       console.log(error)

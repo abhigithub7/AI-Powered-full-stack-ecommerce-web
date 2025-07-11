@@ -9,13 +9,12 @@ function Order() {
 
   const [orderData,setOrderData] = useState([])
   const {currency} = useContext(shopDataContext)
-  const {serverUrl} = useContext(AuthDataContext)
 
 
   const loadOrderData = async ()=>{
     try {
   
-    const result = await axios.post(serverUrl+'order/userorder',{},{withCredentials:true})
+    const result = await axios.post('https://ai-powered-full-stack-ecommerce-web.onrender.com/api/order/userorder',{},{withCredentials:true})
      
     if(result.data)
     {
